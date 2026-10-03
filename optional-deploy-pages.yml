@@ -1,0 +1,45 @@
+# Optional: deploy the portfolio with GitHub Actions instead of "Deploy from a branch".
+# To use it:
+#   1. Move this file to  .github/workflows/pages.yml
+#   2. In the repo: Settings -> Pages -> Source = "GitHub Actions"
+name: Deploy portfolio to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Required files exist
+        run: |
+          for f in index.html Muhammad_Abdullah_DevOps_CV.pdf og-image.png favicon.svg; do
+            test -f "$f" || { echo "Missing file: $f"; exit 1; }
+          done
+
+  deploy:
+    needs: checks
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,12 +1,977 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My CV</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muhammad Abdullah | DevOps Engineer</title>
+<meta name="description" content="DevOps engineer working with Terraform, AWS, Kubernetes and CI/CD. I turn access, infrastructure and deployments into reviewed code.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0B1420">
+<link rel="canonical" href="https://abdullahg1921.github.io/cv/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Muhammad Abdullah | DevOps Engineer">
+<meta property="og:description" content="Terraform, AWS, Kubernetes and CI/CD. Case studies on Zero Trust access as code, provider upgrades and self-healing deployments.">
+<meta property="og:url" content="https://abdullahg1921.github.io/cv/">
+<meta property="og:image" content="https://abdullahg1921.github.io/cv/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Muhammad Abdullah",
+  "jobTitle": "DevOps Engineer",
+  "url": "https://abdullahg1921.github.io/cv/",
+  "address": { "@type": "PostalAddress", "addressLocality": "Lahore", "addressCountry": "PK" },
+  "worksFor": { "@type": "Organization", "name": "nullBrainer" },
+  "knowsAbout": ["Terraform", "Infrastructure as Code", "AWS", "Kubernetes", "Docker", "CI/CD", "GitHub Actions", "Zero Trust", "Linux"],
+  "sameAs": ["https://www.linkedin.com/in/m-abd052", "https://github.com/abdullahg1921"]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  color-scheme: light;
+  --bg: #EDF1F5;
+  --panel: #FFFFFF;
+  --ink: #0B1F33;
+  --muted: #52637A;
+  --line: #D3DBE5;
+  --accent: #1F4FD8;
+  --on-accent: #FFFFFF;
+  --chip: #E1E8F1;
+  --amber: #A85A0A;
+  --amber-tint: #FBEBD6;
+  --green: #14804F;
+  --green-tint: #DDF1E6;
+  --code-bg: #0B1626;
+  --code-line: #1D2C44;
+  --code-ink: #D5DEEC;
+  --code-dim: #7C8BA3;
+  --code-key: #8DB0FF;
+  --code-str: #6FD6A8;
+  --code-warn: #F0B25E;
+  --display: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+  --body: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #0B1420; --panel: #121E2E; --ink: #E6EDF6; --muted: #94A4BA; --line: #223249;
+    --accent: #8DB0FF; --on-accent: #0B1420; --chip: #1A2A40;
+    --amber: #F0B25E; --amber-tint: #3A2A14; --green: #52D0A0; --green-tint: #12301F;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0B1420; --panel: #121E2E; --ink: #E6EDF6; --muted: #94A4BA; --line: #223249;
+  --accent: #8DB0FF; --on-accent: #0B1420; --chip: #1A2A40;
+  --amber: #F0B25E; --amber-tint: #3A2A14; --green: #52D0A0; --green-tint: #12301F;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--body); font-size: 17px; line-height: 1.62;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+button { font: inherit; color: inherit; }
+.skip { position: absolute; left: -999px; top: 8px; background: var(--accent); color: var(--on-accent); padding: 8px 14px; border-radius: 6px; z-index: 60; }
+.skip:focus { left: 8px; }
+
+/* ---------- Shell: left rail + main ---------- */
+.shell { display: grid; grid-template-columns: 270px minmax(0, 1fr); max-width: 1260px; margin: 0 auto; }
+.rail {
+  position: sticky; top: 0; height: 100vh; overflow-y: auto;
+  padding: 32px 26px 28px 28px; border-right: 1px solid var(--line);
+  display: flex; flex-direction: column; gap: 26px;
+}
+.rail-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+.brand { font-family: var(--display); font-weight: 800; font-size: 1.28rem; line-height: 1.15; letter-spacing: -0.02em; color: var(--ink); text-decoration: none; }
+.role { margin: 4px 0 0; color: var(--muted); font-size: 0.95rem; }
+.theme-btn {
+  flex: 0 0 auto; background: transparent; border: 1px solid var(--line);
+  width: 36px; height: 36px; border-radius: 50%; cursor: pointer; line-height: 1; font-size: 1rem;
+}
+.theme-btn:hover { border-color: var(--accent); }
+.status { margin: 0; font-size: 0.92rem; color: var(--ink); display: flex; align-items: center; gap: 9px; }
+.status .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 3px var(--green-tint); flex: 0 0 auto; }
+.status-meta { margin: 4px 0 0 18px; color: var(--muted); font-size: 0.88rem; }
+.rail nav a {
+  display: block; padding: 6px 10px; border-left: 2px solid transparent;
+  color: var(--muted); text-decoration: none; font-size: 0.95rem;
+}
+.rail nav a:hover { color: var(--ink); }
+.rail nav a[aria-current="true"] { color: var(--ink); font-weight: 600; border-left-color: var(--accent); }
+.rail nav .sub a { padding-left: 24px; font-size: 0.86rem; }
+.rail-links { margin-top: auto; display: flex; flex-direction: column; gap: 6px; font-size: 0.93rem; }
+
+main { padding: 56px 52px 40px; min-width: 0; }
+.block { padding: 8px 0 56px; max-width: 840px; }
+
+/* ---------- Type ---------- */
+h1 { font-family: var(--display); font-weight: 800; letter-spacing: -0.03em; line-height: 1.04; font-size: clamp(2.2rem, 4.4vw, 3.5rem); margin: 0 0 22px; max-width: 18ch; }
+h2 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; font-size: clamp(1.55rem, 2.6vw, 1.95rem); margin: 0 0 8px; }
+h3 { font-family: var(--display); font-weight: 700; letter-spacing: -0.015em; font-size: 1.3rem; line-height: 1.25; margin: 0 0 10px; }
+.intro { color: var(--muted); max-width: 64ch; margin: 0 0 26px; }
+.lede { font-size: 1.12rem; color: var(--muted); max-width: 56ch; margin: 0 0 12px; }
+.where { color: var(--muted); font-size: 0.98rem; margin: 0 0 26px; max-width: 60ch; }
+
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 0.97rem; padding: 11px 19px; border-radius: 8px; border: 1px solid var(--accent); }
+.btn.primary { background: var(--accent); color: var(--on-accent); }
+.btn.primary:hover { filter: brightness(1.08); }
+.btn.ghost { color: var(--accent); background: transparent; }
+.btn.ghost:hover { background: var(--chip); }
+
+/* ---------- Hero pipeline ---------- */
+.pipeline { position: relative; margin-top: 44px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px 22px; }
+.pl-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+.pl-head b { font-family: var(--display); font-size: 1.05rem; }
+.replay { background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 4px 14px; font-size: 0.85rem; color: var(--muted); cursor: pointer; }
+.replay:hover { color: var(--ink); border-color: var(--accent); }
+.stages { display: grid; grid-template-columns: repeat(5, 1fr); }
+.stage { position: relative; text-align: left; background: transparent; border: 0; cursor: pointer; padding: 28px 12px 12px 0; color: var(--muted); }
+.stage .node { position: absolute; top: 0; left: 0; width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--line); background: var(--panel); transition: background .25s, border-color .25s; }
+.stage:not(:last-child)::after { content: ""; position: absolute; top: 8px; left: 26px; right: 6px; height: 2px; background: var(--line); transition: background .25s; }
+.stage.done .node { background: var(--green); border-color: var(--green); }
+.stage.done:not(:last-child)::after { background: var(--green); }
+.stage .s-title { display: block; font-family: var(--display); font-weight: 700; font-size: 1rem; color: var(--ink); }
+.stage .s-sub { display: block; font-size: 0.82rem; line-height: 1.35; margin-top: 2px; }
+.stage[aria-selected="true"] .s-title { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 5px; }
+.stage-detail { margin-top: 14px; padding: 16px 18px; background: var(--bg); border-radius: 10px; border: 1px solid var(--line); min-height: 118px; }
+.stage-detail h3 { font-size: 1.05rem; margin: 0 0 6px; }
+.stage-detail p { margin: 0 0 6px; max-width: 70ch; font-size: 0.97rem; }
+.stage-detail .tools { color: var(--muted); font-size: 0.86rem; margin: 0; }
+.token { position: absolute; left: 0; top: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 22%, transparent); opacity: 0; pointer-events: none; z-index: 2; }
+
+/* ---------- Numbers ---------- */
+.numbers { margin-top: 34px; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.numbers div { padding: 20px 18px 20px 0; }
+.numbers div + div { padding-left: 20px; border-left: 1px solid var(--line); }
+.numbers b { display: block; font-family: var(--display); font-weight: 800; font-size: 1.85rem; line-height: 1.1; letter-spacing: -0.02em; }
+.numbers span { color: var(--muted); font-size: 0.9rem; line-height: 1.4; display: block; margin-top: 2px; }
+.about { margin-top: 30px; }
+.about p { max-width: 66ch; margin: 0 0 12px; }
+.about p.soft { color: var(--muted); }
+
+/* ---------- Experience ---------- */
+.job { display: grid; grid-template-columns: 170px 1fr; gap: 24px; padding: 22px 0; border-top: 1px solid var(--line); }
+.job:last-child { border-bottom: 1px solid var(--line); }
+.when { color: var(--muted); font-size: 0.92rem; }
+.when b { display: block; color: var(--ink); font-weight: 600; }
+.job h3 { font-size: 1.12rem; margin: 0 0 2px; }
+.job .org { color: var(--muted); margin: 0 0 10px; font-size: 0.96rem; }
+.job ul { margin: 0; padding-left: 1.15em; }
+.job li { margin-bottom: 6px; max-width: 68ch; }
+
+/* ---------- Case studies ---------- */
+.case { padding: 42px 0 10px; border-top: 1px solid var(--line); }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 0; list-style: none; }
+.tags li { background: var(--chip); border: 1px solid var(--line); border-radius: 999px; padding: 2px 11px; font-size: 0.82rem; }
+.pra { margin: 0 0 6px; }
+.pra > div { display: grid; grid-template-columns: 96px 1fr; gap: 18px; padding: 11px 0; border-top: 1px dashed var(--line); }
+.pra dt { font-weight: 600; color: var(--muted); font-size: 0.93rem; }
+.pra dd { margin: 0; max-width: 66ch; }
+.pra dd ul { margin: 0; padding-left: 1.15em; }
+.pra dd li { margin-bottom: 4px; }
+
+.fig { margin: 22px 0 6px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px 16px 12px; }
+.fig .scroll { overflow-x: auto; }
+.fig svg { display: block; width: 100%; min-width: 660px; height: auto; }
+.fig figcaption { margin-top: 8px; color: var(--muted); font-size: 0.86rem; }
+.bx { fill: var(--bg); stroke: var(--line); stroke-width: 1.5; }
+.bx.dash { stroke-dasharray: 5 4; fill: none; }
+.bx.amber { fill: var(--amber-tint); stroke: var(--amber); }
+.bx.green { fill: var(--green-tint); stroke: var(--green); }
+.t { font: 600 13px var(--body); fill: var(--ink); }
+.t2 { font: 400 12px var(--body); fill: var(--muted); }
+.tm { font: 500 11px var(--mono); fill: var(--muted); }
+.tm.amber { fill: var(--amber); }
+.tm.green { fill: var(--green); }
+.dim { opacity: 0.55; }
+.ln { stroke: var(--muted); stroke-width: 1.5; fill: none; }
+.ln.dash { stroke-dasharray: 4 4; }
+.ah { fill: var(--muted); }
+
+.steps { margin: 0; padding: 0; list-style: none; counter-reset: s; }
+.steps li { counter-increment: s; position: relative; padding: 0 0 8px 34px; }
+.steps li::before { content: counter(s); position: absolute; left: 0; top: 1px; width: 22px; height: 22px; border-radius: 50%; background: var(--chip); border: 1px solid var(--line); font-size: 0.78rem; font-weight: 600; display: grid; place-items: center; }
+
+.code { background: var(--code-bg); color: var(--code-ink); border: 1px solid var(--code-line); border-radius: 10px; margin: 16px 0; overflow: hidden; }
+.code-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 7px 8px 7px 14px; border-bottom: 1px solid var(--code-line); font: 500 0.76rem var(--mono); color: var(--code-dim); }
+.copy { background: transparent; border: 1px solid var(--code-line); color: var(--code-ink); border-radius: 6px; padding: 3px 10px; font: 500 0.76rem var(--mono); cursor: pointer; }
+.copy:hover { border-color: var(--code-key); }
+.code pre { margin: 0; padding: 14px 16px; overflow-x: auto; font: 400 0.83rem/1.65 var(--mono); tab-size: 2; }
+.code .c { color: var(--code-dim); }
+.code .k { color: var(--code-key); }
+.code .s { color: var(--code-str); }
+.code .w { color: var(--code-warn); }
+.note { color: var(--muted); font-size: 0.86rem; margin: -6px 0 0; }
+
+.table { width: 100%; border-collapse: collapse; margin: 6px 0 0; font-size: 0.95rem; }
+.table th, .table td { text-align: left; padding: 9px 12px 9px 0; border-top: 1px dashed var(--line); vertical-align: top; }
+.table th { color: var(--muted); font-weight: 600; width: 190px; }
+
+.labs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 36px; }
+.lab { padding: 16px 0; border-top: 1px solid var(--line); }
+.lab h3 { font-size: 1.05rem; margin: 0 0 4px; }
+.lab p { margin: 0; color: var(--muted); font-size: 0.96rem; }
+
+/* ---------- Stack / principles ---------- */
+.stack { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 30px; }
+.stack div { border-top: 2px solid var(--accent); padding-top: 12px; }
+.stack h3 { font-size: 1.05rem; margin: 0 0 4px; }
+.stack .when2 { color: var(--muted); font-size: 0.86rem; margin: 0 0 10px; }
+.stack ul { list-style: none; margin: 0; padding: 0; }
+.stack li { padding: 4px 0; font-size: 0.96rem; }
+.rules { margin: 0; padding: 0; list-style: none; }
+.rules li { padding: 12px 0; border-top: 1px solid var(--line); max-width: 68ch; }
+.rules li:last-child { border-bottom: 1px solid var(--line); }
+.rules b { font-family: var(--display); }
+
+footer { max-width: 840px; border-top: 1px solid var(--line); padding: 20px 0 8px; color: var(--muted); font-size: 0.88rem; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1000px) {
+  html { scroll-padding-top: 120px; }
+  .shell { display: block; }
+  .rail {
+    position: sticky; top: 0; z-index: 30; height: auto; overflow: visible;
+    padding: 10px 16px 0; gap: 4px; border-right: 0; border-bottom: 1px solid var(--line);
+    background: color-mix(in srgb, var(--bg) 94%, transparent); backdrop-filter: blur(8px);
+  }
+  .rail .role, .status, .status-meta, .rail-links, .rail nav .sub { display: none; }
+  .rail nav { display: flex; overflow-x: auto; gap: 2px; }
+  .rail nav a { white-space: nowrap; border-left: 0; border-bottom: 2px solid transparent; padding: 8px 10px; }
+  .rail nav a[aria-current="true"] { border-bottom-color: var(--accent); }
+  main { padding: 36px 20px 32px; }
+}
+@media (max-width: 760px) {
+  .stages { grid-template-columns: 1fr; }
+  .stage { padding: 0 0 18px 34px; min-height: 52px; }
+  .stage .node { top: 2px; }
+  .stage:not(:last-child)::after { top: 24px; left: 8px; right: auto; width: 2px; height: auto; bottom: -2px; }
+  .numbers { grid-template-columns: repeat(2, 1fr); }
+  .numbers div:nth-child(3) { padding-left: 0; border-left: 0; }
+  .numbers div:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .job { grid-template-columns: 1fr; gap: 4px; }
+  .pra > div { grid-template-columns: 1fr; gap: 4px; }
+  .labs, .stack { grid-template-columns: 1fr; }
+  .stack div { margin-bottom: 18px; }
+  .table th { width: 120px; }
+}
+@media (max-width: 520px) {
+  body { font-size: 16px; }
+  .pipeline { padding: 16px 14px 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .stage .node, .stage::after { transition: none; }
+}
+@media print {
+  .rail, .replay, .token, .copy, .skip { display: none !important; }
+  .shell { display: block; max-width: none; }
+  main { padding: 0; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .case, .job, .fig, .code { break-inside: avoid; }
+  a { color: inherit; }
+}
+</style>
 </head>
 <body>
-  <h1>My CV</h1>
-  <embed src="cv.pdf" type="application/pdf" width="100%" height="800px">
-  <p>If the PDF does not load, <a href="cv.pdf">download CV here</a>.</p>
+<a class="skip" href="#overview">Skip to content</a>
+
+<div class="shell">
+  <aside class="rail">
+    <div class="rail-top">
+      <div>
+        <a class="brand" href="#overview">Muhammad Abdullah</a>
+        <p class="role">DevOps Engineer</p>
+      </div>
+      <button class="theme-btn" id="theme" type="button" aria-label="Switch between light and dark theme">◐</button>
+    </div>
+
+    <div>
+      <p class="status"><span class="dot" aria-hidden="true"></span>Open to roles</p>
+      <p class="status-meta">Lahore, UTC+5<br>Pakistan, Gulf, remote</p>
+    </div>
+
+    <nav aria-label="Sections">
+      <a href="#overview">Overview</a>
+      <a href="#experience">Experience</a>
+      <a href="#cases">Case studies</a>
+      <div class="sub">
+        <a href="#case-rules">Rule priority bug</a>
+        <a href="#case-provider">Provider upgrade</a>
+        <a href="#case-rollout">Multi-environment rollout</a>
+        <a href="#case-aws">Python backend on AWS</a>
+        <a href="#case-ci">CI/CD and governance</a>
+        <a href="#labs">Hands-on labs</a>
+      </div>
+      <a href="#stack">Stack</a>
+      <a href="#principles">How I work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="rail-links">
+      <a href="Muhammad_Abdullah_DevOps_CV.pdf" download>Download CV</a>
+      <a href="mailto:abdullahg1921@gmail.com">abdullahg1921@gmail.com</a>
+      <a href="https://www.linkedin.com/in/m-abd052" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/abdullahg1921" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ===================== OVERVIEW ===================== -->
+    <section class="block" id="overview">
+      <h1>I turn access, infrastructure and deployments into reviewed code.</h1>
+      <p class="lede">I'm a DevOps engineer at nullBrainer. I manage Zero Trust access for an enterprise browser entirely in Terraform, and I build on AWS, Docker, Kubernetes and CI/CD.</p>
+      <p class="where">Based in Lahore, Pakistan. Looking for DevOps, cloud and platform roles in Pakistan, the Gulf, or remote.</p>
+      <div class="actions">
+        <a class="btn primary" href="Muhammad_Abdullah_DevOps_CV.pdf" download>Download CV</a>
+        <a class="btn ghost" href="#cases">Read the case studies</a>
+      </div>
+
+      <div class="pipeline" id="pipeline">
+        <div class="pl-head">
+          <b>How a change reaches production</b>
+          <button class="replay" type="button" id="replay">Replay</button>
+        </div>
+        <div class="stages" role="tablist" aria-label="Change workflow stages" id="stages"></div>
+        <div class="stage-detail" id="stage-detail" role="tabpanel" aria-live="polite"></div>
+        <span class="token" id="token" aria-hidden="true"></span>
+      </div>
+
+      <div class="numbers">
+        <div><b>700+</b><span>lines of peer-reviewed Terraform</span></div>
+        <div><b>55+</b><span>pull requests, develop first, then production</span></div>
+        <div><b>30+</b><span>identity groups under least privilege</span></div>
+        <div><b>0</b><span>resources destroyed in a major provider upgrade</span></div>
+      </div>
+
+      <div class="about">
+        <p>I studied Computer Systems Engineering and started in networking: a CCNA-level foundation and an ISP internship configuring routers, switches and VLANs. That is why I still debug from DNS up to the application.</p>
+        <p class="soft">I moved into cloud and DevOps through internships on AWS, Docker and CI/CD, and now work on production infrastructure as code. Most days that means Terraform, GitHub Actions, and reading audit logs to find out what a rule is really doing.</p>
+      </div>
+    </section>
+
+    <!-- ===================== EXPERIENCE ===================== -->
+    <section class="block" id="experience">
+      <h2>Experience</h2>
+      <p class="intro">Current role first. Company-internal names are left out on purpose.</p>
+
+      <article class="job">
+        <div class="when"><b>Feb 2026 to now</b>Lahore, Pakistan</div>
+        <div>
+          <h3>Junior DevOps Engineer</h3>
+          <p class="org">nullBrainer</p>
+          <ul>
+            <li>Run an enterprise browser's Zero Trust policies entirely as Terraform: 700+ lines across 55+ reviewed pull requests, deployed to develop first and then production.</li>
+            <li>Handle access requests end to end: new identity groups, app onboarding, device-trust rules and DLP controls, with least-privilege reasoning for each change.</li>
+            <li>Find root causes in rule priority and wildcard matching using Terraform and audit logs, then fix them without changing anyone's permissions.</li>
+            <li>Upgraded the Terraform provider across a major version and worked around provider bugs affecting about 20 resources.</li>
+            <li>Extended a shared GitHub Actions workflow and moved production deployment approvals to team-based governance.</li>
+            <li>Built Kubernetes, Jenkins and AWS deployment projects, and set up Grafana for monitoring.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="when"><b>2023 to now</b>Self-directed</div>
+        <div>
+          <h3>Independent Cloud and DevOps Projects</h3>
+          <ul>
+            <li>Built AWS environments (EC2, VPC, IAM, Route 53) with Terraform, with Auto Scaling, load balancers and CloudWatch metrics. Administered and hardened Ubuntu servers.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="when"><b>Oct to Dec 2025</b>Remote</div>
+        <div>
+          <h3>Cloud Computing Intern</h3>
+          <p class="org">CodeAlpha</p>
+          <ul>
+            <li>Deployed a data-redundancy removal system on AWS, added SQL-injection prevention and encryption, and automated validation and backups with Python.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="when"><b>Aug to Oct 2025</b>Remote</div>
+        <div>
+          <h3>DevOps Engineer Intern</h3>
+          <p class="org">Code Sentinel</p>
+          <ul>
+            <li>Built GitHub Actions pipelines that test, build Docker images and deploy to staging. Provisioned AWS test environments with Terraform and the CLI.</li>
+            <li>Wrote Bash and Python scripts for S3 backups, log checks and health pings, and documented runbooks.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <div class="when"><b>Sep to Oct 2024</b>Mirpur, AJK</div>
+        <div>
+          <h3>Network Engineer Intern</h3>
+          <p class="org">Sky Telecom</p>
+          <ul>
+            <li>Configured Cisco routers and switches with VLANs, ACLs, OSPF and BGP, and cut latency by 30%.</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===================== CASE STUDIES ===================== -->
+    <section class="block" id="cases">
+      <h2>Case studies</h2>
+      <p class="intro">Five pieces of work, each with the problem, what I changed and what came out of it. Names, values and config are generalized or simplified, and diagrams are illustrative.</p>
+
+      <!-- ---- Case 1 ---- -->
+      <article class="case" id="case-rules">
+        <h3>Downloads silently blocked: a rule-priority bug</h3>
+        <ul class="tags"><li>Terraform</li><li>Zero Trust</li><li>Audit logs</li><li>Root-cause analysis</li></ul>
+        <dl class="pra">
+          <div><dt>Problem</dt><dd>A group was meant to download files to their laptops. Their rule allowed it, yet downloads were blocked and nothing said why.</dd></div>
+          <div><dt>Approach</dt><dd>
+            <ul>
+              <li>Read the audit logs to see which rule the traffic actually matched, instead of guessing from the rule I expected.</li>
+              <li>Found an earlier, broader rule matching first. Rules are evaluated top-down and the first match wins.</li>
+              <li>Moved the specific rule above the broad one in Terraform. No group's permissions changed.</li>
+            </ul>
+          </dd></div>
+          <div><dt>Result</dt><dd>Downloads worked after a small, reviewed change that went to develop first. The same method also caught a wildcard-domain rule that was swallowing traffic meant for newer rules, which I replaced with an explicit subdomain allowlist.</dd></div>
+        </dl>
+
+        <figure class="fig">
+          <div class="scroll">
+          <svg viewBox="0 0 760 214" role="img" aria-label="Before and after diagram. Before, a broad rule that blocks downloads is evaluated first and matches. After, the specific engineering rule is evaluated first and matches.">
+            <defs><marker id="ah1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="ah"/></marker></defs>
+            <text class="t" x="0" y="16">Before: broad rule sits first</text>
+            <text class="t" x="400" y="16">After: specific rule moved up</text>
+
+            <g>
+              <rect class="bx amber" x="0" y="30" width="360" height="48" rx="8"/>
+              <text class="tm" x="14" y="58">1</text><text class="t" x="36" y="59">Broad rule: block local downloads</text>
+              <text class="tm amber" x="346" y="59" text-anchor="end">matched</text>
+
+              <g class="dim"><rect class="bx" x="0" y="90" width="360" height="48" rx="8"/>
+              <text class="tm" x="14" y="118">2</text><text class="t" x="36" y="119">Engineering apps: allow downloads</text>
+              <text class="tm" x="346" y="119" text-anchor="end">skipped</text></g>
+
+              <g class="dim"><rect class="bx" x="0" y="150" width="360" height="48" rx="8"/>
+              <text class="tm" x="14" y="178">3</text><text class="t" x="36" y="179">Default rule</text></g>
+            </g>
+
+            <line class="ln" x1="372" y1="114" x2="390" y2="114" marker-end="url(#ah1)"/>
+
+            <g>
+              <rect class="bx green" x="400" y="30" width="360" height="48" rx="8"/>
+              <text class="tm" x="414" y="58">1</text><text class="t" x="436" y="59">Engineering apps: allow downloads</text>
+              <text class="tm green" x="746" y="59" text-anchor="end">matched</text>
+
+              <g class="dim"><rect class="bx" x="400" y="90" width="360" height="48" rx="8"/>
+              <text class="tm" x="414" y="118">2</text><text class="t" x="436" y="119">Broad rule: block local downloads</text>
+              <text class="tm" x="746" y="119" text-anchor="end">unchanged</text></g>
+
+              <g class="dim"><rect class="bx" x="400" y="150" width="360" height="48" rx="8"/>
+              <text class="tm" x="414" y="178">3</text><text class="t" x="436" y="179">Default rule</text></g>
+            </g>
+          </svg>
+          </div>
+          <figcaption>Same rules, same group permissions. Only the evaluation order changed. Illustrative rule names.</figcaption>
+        </figure>
+
+        <p class="intro" style="margin-top:18px">Beyond this one bug, the controls I have shipped as code:</p>
+        <table class="table">
+          <tr><th>Clipboard DLP</th><td>Regex detectors limiting copies to 512 and 1,024 characters, applied across 12 access rules. Tested on real ticket text: 409 characters allowed, 543 blocked.</td></tr>
+          <tr><th>Device posture</th><td>Disk encryption, EDR and agent checks for Linux, macOS and Windows, rebuilt from manual UI settings into Terraform.</td></tr>
+          <tr><th>Upload and download profiles</th><td>Restricted uploads with malware scanning, and a profile that lets files be previewed but not moved elsewhere.</td></tr>
+          <tr><th>Scoped exceptions</th><td>App-level rules instead of edits to shared profiles, to keep the blast radius small.</td></tr>
+        </table>
+      </article>
+
+      <!-- ---- Case 2 ---- -->
+      <article class="case" id="case-provider">
+        <h3>Upgrading a Terraform provider across a major version</h3>
+        <ul class="tags"><li>Terraform</li><li>Change management</li><li>Provider debugging</li></ul>
+        <dl class="pra">
+          <div><dt>Problem</dt><dd>The provider was on 0.42.0 and needed to reach 1.6.0. A jump like that can change how existing resources are planned, and the code manages live security policy.</dd></div>
+          <div><dt>Approach</dt><dd>
+            <ol class="steps">
+              <li>Bump the provider and fix the lock-file checksum mismatches.</li>
+              <li>Run the plan on develop and read every proposed change.</li>
+              <li>Confirm zero resources would be destroyed.</li>
+              <li>Promote to production only after review.</li>
+            </ol>
+          </dd></div>
+          <div><dt>Result</dt><dd>The upgrade reached production with a zero-destroy plan. Along the way I fixed an "inconsistent result after apply" error on about 20 resources, and a phantom diff on device posture objects, and documented the trade-off of each workaround for the reviewer.</dd></div>
+        </dl>
+
+        <div class="code">
+          <div class="code-head"><span>main.tf (representative)</span><button class="copy" type="button">Copy</button></div>
+<pre><code><span class="k">resource</span> <span class="s">"provider_object"</span> <span class="s">"example"</span> {
+  name        = <span class="s">"example"</span>
+  description = <span class="s">""</span>   <span class="c"># set explicitly: null vs "" kept flipping and failed apply</span>
+
+  lifecycle {
+    <span class="c"># Provider reports a phantom diff on every plan.</span>
+    <span class="c"># Trade-off: real drift on these fields will not show in plan.</span>
+    ignore_changes = [ <span class="w">some_field</span> ]
+  }
+}</code></pre>
+        </div>
+        <p class="note">Resource and field names are placeholders, not the real schema.</p>
+      </article>
+
+      <!-- ---- Case 3 ---- -->
+      <article class="case" id="case-rollout">
+        <h3>One automation platform, three environments, three trust levels</h3>
+        <ul class="tags"><li>Terraform</li><li>AWS ECS</li><li>ALB</li><li>Route 53</li></ul>
+        <dl class="pra">
+          <div><dt>Problem</dt><dd>Access to an external, hosted automation platform had to be reworked when the company moved to a self-hosted one with separate dev, QA and production instances.</dd></div>
+          <div><dt>Approach</dt><dd>
+            <ul>
+              <li>Reworked the existing pull request instead of starting a new one, so review history stayed intact.</li>
+              <li>Traced the real domains through a separate infrastructure repository: the ECS module, ALB listener rules, Route 53 records and variable files.</li>
+              <li>Set trust per environment instead of one shared rule.</li>
+            </ul>
+          </dd></div>
+          <div><dt>Result</dt><dd>Each environment gets only the access it needs, and production uploads stay fully blocked until the use case is defined.</dd></div>
+        </dl>
+
+        <figure class="fig">
+          <div class="scroll">
+          <svg viewBox="0 0 760 290" role="img" aria-label="Three environments with different access, all traced to the infrastructure repository path of Route 53, ALB listener rule and ECS service.">
+            <defs><marker id="ah3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="ah"/></marker></defs>
+
+            <rect class="bx" x="0" y="8" width="240" height="116" rx="10"/>
+            <text class="t" x="16" y="34">dev</text>
+            <text class="t2" x="16" y="62">Builder team and engineers</text>
+
+            <rect class="bx" x="260" y="8" width="240" height="116" rx="10"/>
+            <text class="t" x="276" y="34">qa</text>
+            <text class="t2" x="276" y="62">Product, engineering and QA</text>
+
+            <rect class="bx amber" x="520" y="8" width="240" height="116" rx="10"/>
+            <text class="t" x="536" y="34">production</text>
+            <text class="t2" x="536" y="62">Uploads fully blocked until</text>
+            <text class="t2" x="536" y="80">the use case is defined</text>
+
+            <line class="ln dash" x1="120" y1="124" x2="120" y2="176"/>
+            <line class="ln dash" x1="380" y1="124" x2="380" y2="176"/>
+            <line class="ln dash" x1="640" y1="124" x2="640" y2="176"/>
+
+            <rect class="bx dash" x="0" y="176" width="760" height="102" rx="10"/>
+            <text class="tm" x="16" y="198">infrastructure repo, used to find the real domains</text>
+
+            <rect class="bx" x="60" y="214" width="170" height="40" rx="8"/>
+            <text class="t" x="145" y="239" text-anchor="middle">Route 53 record</text>
+            <line class="ln" x1="232" y1="234" x2="296" y2="234" marker-end="url(#ah3)"/>
+            <rect class="bx" x="298" y="214" width="170" height="40" rx="8"/>
+            <text class="t" x="383" y="239" text-anchor="middle">ALB listener rule</text>
+            <line class="ln" x1="470" y1="234" x2="534" y2="234" marker-end="url(#ah3)"/>
+            <rect class="bx" x="536" y="214" width="170" height="40" rx="8"/>
+            <text class="t" x="621" y="239" text-anchor="middle">ECS service</text>
+          </svg>
+          </div>
+          <figcaption>The host names in each environment came from Terraform in the infrastructure repo, not from guesswork.</figcaption>
+        </figure>
+      </article>
+
+      <!-- ---- Case 4 ---- -->
+      <article class="case" id="case-aws">
+        <h3>A self-healing Python backend on AWS</h3>
+        <ul class="tags"><li>EC2</li><li>Ubuntu</li><li>Nginx</li><li>systemd</li><li>Let's Encrypt</li></ul>
+        <dl class="pra">
+          <div><dt>Problem</dt><dd>A Python backend that parses and validates data needed a production-ready home: reliable, able to recover on its own, and secure.</dd></div>
+          <div><dt>Approach</dt><dd>
+            <ul>
+              <li>Set up an Ubuntu EC2 instance and an isolated virtual environment for the app and its dependencies.</li>
+              <li>Ran the app as a systemd service so it starts on boot and restarts after a crash.</li>
+              <li>Put Nginx in front as a reverse proxy to the internal app port.</li>
+              <li>Prepared HTTPS with Certbot and Let's Encrypt.</li>
+            </ul>
+          </dd></div>
+          <div><dt>Result</dt><dd>If the app crashes, systemd brings it back without anyone being paged. HTTPS is the last step: the certificate is issued once DNS propagation finishes.</dd></div>
+        </dl>
+
+        <figure class="fig">
+          <div class="scroll">
+          <svg viewBox="0 0 760 250" role="img" aria-label="Request path: browser to DNS to Nginx on an EC2 instance, then to the Python app managed by systemd. Certbot connects to Nginx for HTTPS, pending.">
+            <defs><marker id="ah4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="ah"/></marker></defs>
+
+            <rect class="bx" x="0" y="88" width="104" height="50" rx="8"/>
+            <text class="t" x="52" y="118" text-anchor="middle">Browser</text>
+            <line class="ln" x1="106" y1="113" x2="146" y2="113" marker-end="url(#ah4)"/>
+            <rect class="bx" x="148" y="88" width="92" height="50" rx="8"/>
+            <text class="t" x="194" y="118" text-anchor="middle">DNS</text>
+            <line class="ln" x1="242" y1="113" x2="326" y2="113" marker-end="url(#ah4)"/>
+
+            <rect class="bx dash" x="290" y="10" width="470" height="230" rx="12"/>
+            <text class="tm" x="306" y="34">EC2 instance, Ubuntu</text>
+
+            <rect class="bx" x="328" y="88" width="140" height="50" rx="8"/>
+            <text class="t" x="398" y="110" text-anchor="middle">Nginx</text>
+            <text class="t2" x="398" y="127" text-anchor="middle">reverse proxy</text>
+            <line class="ln" x1="470" y1="113" x2="568" y2="113" marker-end="url(#ah4)"/>
+
+            <rect class="bx" x="570" y="88" width="170" height="50" rx="8"/>
+            <text class="t" x="655" y="110" text-anchor="middle">Python app</text>
+            <text class="t2" x="655" y="127" text-anchor="middle">virtual env, internal port</text>
+
+            <line class="ln" x1="655" y1="164" x2="655" y2="140" marker-end="url(#ah4)"/>
+            <rect class="bx green" x="570" y="166" width="170" height="52" rx="8"/>
+            <text class="t" x="655" y="189" text-anchor="middle">systemd</text>
+            <text class="t2" x="655" y="206" text-anchor="middle">start on boot, auto-restart</text>
+
+            <line class="ln dash" x1="398" y1="164" x2="398" y2="140" marker-end="url(#ah4)"/>
+            <rect class="bx amber" x="328" y="166" width="140" height="52" rx="8" stroke-dasharray="5 4"/>
+            <text class="t" x="398" y="189" text-anchor="middle">Certbot</text>
+            <text class="t2" x="398" y="206" text-anchor="middle">HTTPS, pending DNS</text>
+          </svg>
+          </div>
+          <figcaption>Solid arrows are live. The dashed Certbot step runs once the domain resolves.</figcaption>
+        </figure>
+
+        <div class="code">
+          <div class="code-head"><span>/etc/systemd/system/app.service (representative)</span><button class="copy" type="button">Copy</button></div>
+<pre><code><span class="k">[Unit]</span>
+Description=Python backend service
+After=network.target
+
+<span class="k">[Service]</span>
+User=ubuntu
+WorkingDirectory=/opt/app
+ExecStart=/opt/app/venv/bin/python -m app
+Restart=<span class="w">always</span>
+RestartSec=3
+
+<span class="k">[Install]</span>
+WantedBy=multi-user.target</code></pre>
+        </div>
+
+        <div class="code">
+          <div class="code-head"><span>/etc/nginx/sites-available/app (representative)</span><button class="copy" type="button">Copy</button></div>
+<pre><code><span class="k">server</span> {
+  listen 80;
+  server_name example.com;
+
+  <span class="k">location</span> / {
+    proxy_pass http://127.0.0.1:8000;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+  }
+}</code></pre>
+        </div>
+        <p class="note">Paths, user name, domain and port are placeholders.</p>
+      </article>
+
+      <!-- ---- Case 5 ---- -->
+      <article class="case" id="case-ci">
+        <h3>A failing PR check, and who may approve production</h3>
+        <ul class="tags"><li>GitHub Actions</li><li>JavaScript</li><li>Jira REST API</li><li>Terraform</li></ul>
+        <dl class="pra">
+          <div><dt>Problem</dt><dd>A required pull request check kept failing because it only accepted Jira sub-tasks. Separately, production deployment approvers were individual users, which a security review flagged: approvals are OR-based and a person could approve their own change.</dd></div>
+          <div><dt>Approach</dt><dd>
+            <ul>
+              <li>Added an opt-in boolean input to the shared composite action. The strict default stays for every other repository, and only one repo opts in.</li>
+              <li>Reworked the logic after senior review so new Jira issue types would not break it.</li>
+              <li>Moved the production approvers into Terraform and switched them from individual users to a team.</li>
+              <li>Sorted out the GitHub token scope and SAML SSO authorization needed to push workflow changes.</li>
+            </ul>
+          </dd></div>
+          <div><dt>Result</dt><dd>The same strict checks everywhere, with one deliberate exception, and central governance of who can approve production.</dd></div>
+        </dl>
+
+        <div class="code">
+          <div class="code-head"><span>action.yml (simplified)</span><button class="copy" type="button">Copy</button></div>
+<pre><code><span class="k">name</span>: Check Jira issue
+<span class="k">inputs</span>:
+  <span class="k">allow-any-issue-type</span>:
+    <span class="k">description</span>: Accept any Jira issue type, not only sub-tasks
+    <span class="k">required</span>: false
+    <span class="k">default</span>: <span class="s">"false"</span>   <span class="c"># strict unless a repo opts in</span>
+<span class="k">runs</span>:
+  <span class="k">using</span>: composite
+  <span class="k">steps</span>:
+    - <span class="k">uses</span>: actions/github-script@v7
+      <span class="k">with</span>:
+        <span class="k">script</span>: |
+          const strict = "${{ inputs.allow-any-issue-type }}" !== "true";
+          <span class="c">// call the Jira REST API, then validate the issue type</span></code></pre>
+        </div>
+
+        <div class="code">
+          <div class="code-head"><span>environments.tf (representative)</span><button class="copy" type="button">Copy</button></div>
+<pre><code><span class="k">resource</span> <span class="s">"github_repository_environment"</span> <span class="s">"production"</span> {
+  repository  = <span class="s">"example-repo"</span>
+  environment = <span class="s">"production"</span>
+
+  reviewers {
+    <span class="c"># a team, not individual users</span>
+    teams = [github_team.platform_approvers.id]
+  }
+}</code></pre>
+        </div>
+      </article>
+
+      <!-- ---- Labs ---- -->
+      <article class="case" id="labs">
+        <h3>Hands-on labs</h3>
+        <p class="intro">Smaller projects where I built something to understand how it fails.</p>
+        <div class="labs">
+          <div class="lab"><h3>Kubernetes chat application</h3><p>A multi-service chat app on Kubernetes. I worked through pod crashes, service discovery problems and DNS resolution issues.</p></div>
+          <div class="lab"><h3>Jenkins and Docker pipeline</h3><p>An automated build and deploy pipeline with Docker-in-Docker builds and container networking, for consistent deployments.</p></div>
+          <div class="lab"><h3>ReverseRDP</h3><p>A proof of concept for remote desktop access without public ports: a Linux relay server, a Windows agent and MongoDB authentication.</p></div>
+          <div class="lab"><h3>AWS with Terraform</h3><p>Repeatable environments with EC2, VPC, IAM and S3, plus Auto Scaling, load balancers and CloudWatch metrics.</p></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===================== STACK ===================== -->
+    <section class="block" id="stack">
+      <h2>Stack</h2>
+      <p class="intro">Grouped by how often I use each tool, so you know what to expect.</p>
+      <div class="stack">
+        <div>
+          <h3>Daily</h3>
+          <p class="when2">What I use at work every week</p>
+          <ul>
+            <li>Terraform (HCL)</li>
+            <li>GitHub Actions</li>
+            <li>Git and GitHub (PRs, environments, branch protection)</li>
+            <li>IAM, RBAC and Zero Trust policy</li>
+            <li>Linux terminal troubleshooting</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Working knowledge</h3>
+          <p class="when2">Used in projects and at work</p>
+          <ul>
+            <li>AWS: EC2, S3, IAM, VPC, Route 53, ELB, ECS, CloudWatch</li>
+            <li>Docker and Kubernetes</li>
+            <li>Jenkins</li>
+            <li>Nginx and systemd</li>
+            <li>Bash and Python</li>
+            <li>Grafana</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Learning now</h3>
+          <p class="when2">What I'm building next</p>
+          <ul>
+            <li>AWS Solutions Architect Associate (exam prep)</li>
+            <li>Kubernetes in more depth</li>
+            <li>Prometheus and observability</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PRINCIPLES ===================== -->
+    <section class="block" id="principles">
+      <h2>How I work</h2>
+      <p class="intro">The habits I bring to a team.</p>
+      <ul class="rules">
+        <li><b>Small pull requests.</b> One change, a clear title and a description a reviewer can follow without asking me.</li>
+        <li><b>Develop first.</b> Nothing reaches production before I have seen the plan and the result on develop.</li>
+        <li><b>Ask before granting.</b> Which group, which app, what access, for how long. One extra question beats over-broad access.</li>
+        <li><b>Name the trade-off.</b> Wildcard side effects, shared profiles and wide access get flagged before I implement, not after.</li>
+        <li><b>Root cause over patch.</b> Read the logs, find the rule that actually fired, and fix that.</li>
+      </ul>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="block" id="contact">
+      <h2>Contact</h2>
+      <p class="intro">I'm looking for DevOps, cloud and platform roles. Email is the fastest way to reach me, and my CV has the full details.</p>
+      <div class="actions">
+        <a class="btn primary" href="mailto:abdullahg1921@gmail.com">abdullahg1921@gmail.com</a>
+        <a class="btn ghost" href="Muhammad_Abdullah_DevOps_CV.pdf" download>Download CV</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/m-abd052" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn ghost" href="https://github.com/abdullahg1921" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 Muhammad Abdullah. Hosted on GitHub Pages.
+    </footer>
+  </main>
+</div>
+
+<script>
+/* ---------- Theme toggle ---------- */
+(function () {
+  var root = document.documentElement;
+  try {
+    var saved = localStorage.getItem('theme');
+    if (saved === 'light' || saved === 'dark') root.setAttribute('data-theme', saved);
+  } catch (e) {}
+  document.getElementById('theme').addEventListener('click', function () {
+    var current = root.getAttribute('data-theme') ||
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    var next = current === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  });
+})();
+
+/* ---------- Hero pipeline: a change travels once, stages are clickable ---------- */
+(function () {
+  var STAGES = [
+    { t: 'Request', s: 'Slack, Jira or a PR comment',
+      d: 'Access and security requests come from senior engineers and users. Before I change anything I ask what is actually needed: which group, which app, what level of access. I would rather ask one extra question than grant too much.',
+      tools: 'Slack, Jira, GitHub' },
+    { t: 'Pull request', s: 'Small change, plan on PR',
+      d: 'I trace the current behavior in the Terraform code and the audit logs, make the smallest change that solves it, and open a pull request with a clear description. GitHub Actions posts the Terraform plan for review.',
+      tools: 'Terraform, GitHub Actions' },
+    { t: 'Review', s: 'A senior engineer reads the plan',
+      d: 'A senior engineer reviews the diff and the plan. I flag the trade-offs myself: over-broad access, wildcard side effects, and how many rules share a profile.',
+      tools: 'GitHub pull request review' },
+    { t: 'Develop', s: 'Applied first',
+      d: 'The change is applied to the develop environment first. I check the result there and use the audit logs to confirm which rule actually matched.',
+      tools: 'GitHub environments, audit logs' },
+    { t: 'Production', s: 'Protected environment',
+      d: 'After review the same change is promoted to production through a GitHub environment with team-based approvers. Before it goes out I check the plan for anything being destroyed.',
+      tools: 'GitHub environments, Terraform plan' }
+  ];
+
+  var wrap = document.getElementById('pipeline');
+  var stagesEl = document.getElementById('stages');
+  var detail = document.getElementById('stage-detail');
+  var token = document.getElementById('token');
+  var replayBtn = document.getElementById('replay');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var btns = [], timers = [];
+
+  function select(i) {
+    btns.forEach(function (b, k) {
+      b.setAttribute('aria-selected', k === i ? 'true' : 'false');
+      b.tabIndex = k === i ? 0 : -1;
+    });
+    var s = STAGES[i];
+    detail.setAttribute('aria-labelledby', 'stage-' + i);
+    detail.innerHTML = '<h3>' + s.t + '</h3><p>' + s.d + '</p><p class="tools">' + s.tools + '</p>';
+  }
+
+  STAGES.forEach(function (s, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'stage';
+    b.id = 'stage-' + i;
+    b.setAttribute('role', 'tab');
+    b.innerHTML = '<span class="node"></span><span class="s-title">' + s.t + '</span><span class="s-sub">' + s.s + '</span>';
+    b.addEventListener('click', function () { select(i); });
+    b.addEventListener('keydown', function (e) {
+      var n = null;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') n = (i + 1) % STAGES.length;
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') n = (i - 1 + STAGES.length) % STAGES.length;
+      if (n !== null) { e.preventDefault(); select(n); btns[n].focus(); }
+    });
+    stagesEl.appendChild(b);
+    btns.push(b);
+  });
+
+  function center(i) {
+    var w = wrap.getBoundingClientRect();
+    var n = btns[i].querySelector('.node').getBoundingClientRect();
+    return { x: n.left - w.left + n.width / 2, y: n.top - w.top + n.height / 2 };
+  }
+  function moveTo(i) {
+    var c = center(i);
+    token.style.transform = 'translate(' + (c.x - 12) + 'px,' + (c.y - 12) + 'px)';
+  }
+  function clearTimers() { timers.forEach(clearTimeout); timers = []; }
+
+  function play() {
+    clearTimers();
+    btns.forEach(function (b) { b.classList.remove('done'); });
+    token.style.opacity = '0';
+    if (reduce) { btns.forEach(function (b) { b.classList.add('done'); }); return; }
+
+    token.style.transition = 'none';
+    moveTo(0);
+    token.style.opacity = '1';
+    void token.offsetWidth;
+    token.style.transition = 'transform .75s cubic-bezier(.4,0,.2,1), opacity .4s';
+
+    var i = 0;
+    (function arrive() {
+      btns[i].classList.add('done');
+      if (i === STAGES.length - 1) {
+        timers.push(setTimeout(function () { token.style.opacity = '0'; }, 500));
+        return;
+      }
+      timers.push(setTimeout(function () {
+        i++;
+        moveTo(i);
+        timers.push(setTimeout(arrive, 800));
+      }, 450));
+    })();
+  }
+
+  replayBtn.addEventListener('click', play);
+  select(0);
+  setTimeout(play, 600);
+})();
+
+/* ---------- Copy buttons on code blocks ---------- */
+(function () {
+  document.querySelectorAll('.code').forEach(function (block) {
+    var btn = block.querySelector('.copy');
+    var pre = block.querySelector('pre');
+    btn.addEventListener('click', function () {
+      var text = pre.innerText;
+      function done(ok) {
+        btn.textContent = ok ? 'Copied' : 'Press Ctrl+C';
+        setTimeout(function () { btn.textContent = 'Copy'; }, 1600);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(false); });
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        var ok = false;
+        try { ok = document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta);
+        done(ok);
+      }
+    });
+  });
+})();
+
+/* ---------- Scroll spy for the left navigation ---------- */
+(function () {
+  var links = document.querySelectorAll('.rail nav a[href^="#"]');
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  var ids = Object.keys(map);
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) {
+        links.forEach(function (a) { a.removeAttribute('aria-current'); });
+        map[en.target.id].setAttribute('aria-current', 'true');
+      }
+    });
+  }, { rootMargin: '-25% 0px -65% 0px' });
+  ids.forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) io.observe(el);
+  });
+})();
+</script>
 </body>
 </html>
